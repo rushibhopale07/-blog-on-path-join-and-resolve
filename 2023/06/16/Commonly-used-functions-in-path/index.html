@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Commonly used functions in path | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Today we learn Commonly used functions in pathTwo commonly used functions in the path module are path.join() and path.resolve()These two functions deal with segments starting with &#x2F; in very diffe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Commonly used functions in path">
+<meta property="og:url" content="http://example.com/2023/06/16/Commonly-used-functions-in-path/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Today we learn Commonly used functions in pathTwo commonly used functions in the path module are path.join() and path.resolve()These two functions deal with segments starting with &#x2F; in very diffe">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-16T11:00:05.000Z">
+<meta property="article:modified_time" content="2023-06-16T12:51:04.616Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="path.join() path.resolve()">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Commonly-used-functions-in-path" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/06/16/Commonly-used-functions-in-path/" class="article-date">
+  <time class="dt-published" datetime="2023-06-16T11:00:05.000Z" itemprop="datePublished">2023-06-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Commonly used functions in path
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="Today-we-learn-Commonly-used-functions-in-path"><a href="#Today-we-learn-Commonly-used-functions-in-path" class="headerlink" title="Today we learn Commonly used functions in path"></a>Today we learn Commonly used functions in path</h2><p>Two commonly used functions in the path module are path.join() and path.resolve()<br>These two functions deal with segments starting with &#x2F; in very different ways</p>
+<p>The path.join and path.resolve are two different methods of the path module.</p>
+<p>Both these methods accept a sequence of paths or path segments.</p>
+<p>The path.resolve() method resolves a sequence of paths or path segments into an absolute path.</p>
+<p>The path.join() method joins all given path segments together using the platform specific separator as a delimiter, then normalizes the resulting path.</p>
+<p>In order to better understand and differentiate behaviours, let me explain it with different scenarios.</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">path.join(<span class="string">&#x27;/a&#x27;</span>, <span class="string">&#x27;/b&#x27;</span>) // Outputs <span class="string">&#x27;/a/b&#x27;</span></span><br><span class="line"></span><br><span class="line">path.resolve(<span class="string">&#x27;/a&#x27;</span>, <span class="string">&#x27;/b&#x27;</span>) // Outputs <span class="string">&#x27;/b&#x27;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="Introduction-to-path-join"><a href="#Introduction-to-path-join" class="headerlink" title="Introduction to path.join()"></a>Introduction to path.join()</h2><p>The path.join function is used to concatenate multiple path segments together. It results a single normalized path string. It handles the differences in file path separators between operating systems (e.g., forward slash &#x2F; on Unix-like systems and backward slash \ on Windows) and ensures the correct joining of paths.</p>
+<h3 id="Example-of-path-join"><a href="#Example-of-path-join" class="headerlink" title="Example of path.join"></a>Example of path.join</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const path = require(<span class="string">&#x27;path&#x27;</span>); //</span><br><span class="line"></span><br><span class="line">const directory = <span class="string">&#x27;/myApp&#x27;</span>;  </span><br><span class="line">const filename = <span class="string">&#x27;index.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line">const fullPath = path.join(directory, filename);</span><br><span class="line">console.log(fullPath);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">results - /myApp/index.js</span><br><span class="line"></span><br><span class="line">- The path.join() method joins the specified path segments into one path.</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="Introduction-to-path-resolve"><a href="#Introduction-to-path-resolve" class="headerlink" title="Introduction to path.resolve()"></a>Introduction to path.resolve()</h2><p>The path.resolve() method is used to resolve a sequence of path-segments to an absolute path. It works by processing the sequence of paths from right to left, prepending each of the paths until the absolute path is created. The resulting path is normalized and trailing slashes are removed as required.<br>If no path segments are given as parameters, then the absolute path of the current working directory is used.</p>
+<h3 id="Example-of-path-resolve"><a href="#Example-of-path-resolve" class="headerlink" title="Example of path.resolve()"></a>Example of path.resolve()</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const path = require(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">const basePath = <span class="string">&#x27;/myApp&#x27;</span>;</span><br><span class="line">const relativePath = <span class="string">&#x27;../src/index.js&#x27;</span>;</span><br><span class="line"></span><br><span class="line">const absolutePath = path.resolve(basePath, relativePath);</span><br><span class="line">console.log(absolutePath);</span><br><span class="line"></span><br><span class="line">results - /myApp/src/index.js</span><br><span class="line"></span><br><span class="line">- resolve will always result <span class="keyword">in</span> an absolute URL</span><br></pre></td></tr></table></figure>
+
+<p>One important characteristic of path.resolve is that it always returns an absolute path. If the resolved path is already an absolute path, it is returned as is. If the resolved path is a relative path, it is resolved relative to the current working directory.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/06/16/Commonly-used-functions-in-path/" data-id="cliygxpb50000glgt4gvlfn4x" data-title="Commonly used functions in path" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/path-join-path-resolve/" rel="tag">path.join() path.resolve()</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/06/16/demo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/06/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/path-join-path-resolve/" rel="tag">path.join() path.resolve()</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/path-join-path-resolve/" style="font-size: 10px;">path.join() path.resolve()</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/06/16/demo/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/16/Commonly-used-functions-in-path/">Commonly used functions in path</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/16/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
